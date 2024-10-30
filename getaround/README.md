@@ -30,3 +30,26 @@ Le projet va tenter de repondre à ces questions :
 - Combien de cas problématiques cela permettra-t-il de résoudre en fonction du seuil et de la portée choisis ?
 
 ## 2. 📈 Optimisation du prix
+
+## 3. 🏗️ Installation local
+
+### 3.1 Requis
+
+```
+docker
+docker-compose
+```
+
+### 3.2 🚀 Démarrage du projet
+
+Construction des images docker.
+
+```
+docker compose build
+```
+
+Création des containers docker.
+
+```
+docker compose up
+```

@@ -1,0 +1,9 @@
+fastapi[standard]
+uvicorn[standard]
+gunicorn
+pydantic
+pandas
+numpy
+openpyxl
+mlflow
+boto3

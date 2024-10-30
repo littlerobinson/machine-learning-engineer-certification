@@ -1,0 +1,21 @@
+services:
+  api:
+    environment:
+      - PORT=8881
+    build: ./api
+    ports:
+      - "8881:8881"
+  dashboard:
+    environment:
+      - PORT=8882
+    build: ./dashboard
+    volumes:
+      - ./dashboard/src:/app/src
+    ports:
+      - "8882:8882"
+  mlflow:
+    environment:
+      - PORT=8883
+    build: ./mlflow
+    ports:
+      - "8883:8883"
