@@ -384,6 +384,45 @@ def delete_ouliers(dataset, sigmas=3, columns=[]):
     return filtered_df
 
 
+def get_correlation_matrix(corr_dataset):
+    correlation_matrix = corr_dataset.corr()
+
+    # Créer la figure
+    fig = go.Figure(
+        data=go.Heatmap(
+            z=correlation_matrix,
+            x=correlation_matrix.columns,
+            y=correlation_matrix.columns,
+            zmin=-1,  # Minimum de l'échelle de couleurs
+            zmax=1,  # Maximum de l'échelle de couleurs
+            text=correlation_matrix.round(2),  # Valeurs à afficher dans les cellules
+            texttemplate="%{text:.2f}",  # Format des valeurs
+            textfont={"size": 10},  # Taille de la police pour les valeurs
+            hoverongaps=False,  # Désactiver le survol sur les cellules vides
+            colorscale="RdBu",  # Échelle de couleurs rouge-bleu
+            colorbar=dict(
+                title="Correlation",  # Titre de la barre de couleurs
+                titleside="right",
+                thickness=15,
+            ),
+        )
+    )
+    # Mise à jour du layout
+    fig.update_layout(
+        title="Matrice de Corrélation Interactive",
+        width=900,  # Largeur de la figure
+        height=800,  # Hauteur de la figure
+        xaxis=dict(
+            tickangle=45,  # Rotation des labels de l'axe x
+            side="bottom",
+        ),
+        yaxis=dict(
+            autorange="reversed"  # Inverser l'axe y pour avoir la même disposition que seaborn
+        ),
+    )
+    return fig
+
+
 #############################################################################
 #   Global variable
 #############################################################################
@@ -666,6 +705,27 @@ if __name__ == "__main__":
             )
             st.write(stat[1])
 
+        st.markdown("---")
+        st.markdown("**Matrice de corrélation:**")
+
+        corr_dataset = data[
+            [
+                "rental_id",
+                "car_id",
+                "checkin_type",
+                "delay_at_checkout_in_minutes",
+                "previous_ended_rental_id",
+                "time_delta_with_previous_rental_in_minutes",
+                "rental_count",
+            ]
+        ]
+        corr_dataset["checkin_type"] = corr_dataset["checkin_type"].apply(
+            lambda x: 1 if x == "connect" else 0
+        )
+        corr_dataset = corr_dataset.corr()
+        fig = get_correlation_matrix(corr_dataset)
+        st.plotly_chart(fig)
+
     if tab == MENU_OBSERVATIONS:
         st.title("💡 Observations")
 
@@ -695,6 +755,10 @@ if __name__ == "__main__":
             **- Type de Check-in et état de location :**
 
             - Le type de check-in (mobile vs. connect) influence la durée du retard, et par conséquent les pertes financières, probablement en raison du temps nécessaire pour le retour du véhicule par le loueur et le locataire.
+
+            **- Corrélations :**
+
+            - Il existe une corrélation forte entre le type de checkin et le nombre de location d'un utilisateur. Les personnes disposant du dispositif connect getaround louent plus lors véhicule.
 
             ### Pistes d'amélioration
 
