@@ -2,7 +2,6 @@ from fastapi import FastAPI
 
 from .routers import getaround_router
 
-
 tags_metadata = [
     {
         "name": "data",

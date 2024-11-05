@@ -1,4 +1,4 @@
-FROM python:3.12.7-slim-bookworm AS getaround-dashboard
+FROM python:3.12.7-slim-bookworm AS getaround-dashboard-jedha
 
 WORKDIR /app
 

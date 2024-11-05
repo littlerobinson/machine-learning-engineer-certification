@@ -1,3 +1,4 @@
+import os
 import mlflow
 import pandas as pd
 
@@ -99,10 +100,12 @@ async def predict(input_data: GetaroundModel):
     if df["model_key"][0] not in model_key_values:
         df["model_key"][0] = "other"
 
-    mlflow.set_tracking_uri("http://mlflow:8883/")
+    MLFLOW_TRACKING_URI = os.getenv("MLFLOW_TRACKING_URI")
+    mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
 
     # Log model from mlflow
-    logged_model = "runs:/a2517450e2444484a709a9d7823f5110/getaround-price-prediction"
+    MLFLOW_LOGGED_MODEL = os.getenv("MLFLOW_LOGGED_MODEL")
+    logged_model = MLFLOW_LOGGED_MODEL
 
     # If you want to load model persisted locally
     # loaded_model = joblib.load('doctor-cancellation-detector/model.joblib')

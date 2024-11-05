@@ -2,6 +2,7 @@ services:
   api:
     environment:
       - PORT=8881
+    image: getaround-api-jedha
     build: ./api
     volumes:
       - ./api/src:/app/src
@@ -12,6 +13,7 @@ services:
   dashboard:
     environment:
       - PORT=8882
+    image: getaround-dashboard-jedha
     build: ./dashboard
     volumes:
       - ./dashboard/src:/app/src
@@ -22,6 +24,7 @@ services:
   mlflow:
     environment:
       - PORT=8883
+    image: getaround-mlflow-jedha
     build: ./mlflow
     ports:
       - "8883:8883"

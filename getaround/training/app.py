@@ -37,12 +37,11 @@ if __name__ == "__main__":
     load_dotenv()
 
     # Init for MLflow
-    APP_URI = os.getenv("APP_URI")
-    APP_URI = "http://0.0.0.0:8883"
-    print(f"Call MLflow URI: {APP_URI}")
+    MLFLOW_TRACKING_URI = os.getenv("MLFLOW_TRACKING_URI")
+    print(f"Call MLflow URI: {MLFLOW_TRACKING_URI}")
     EXPERIMENT_NAME = "getaround-price-prediction"
 
-    mlflow.set_tracking_uri(APP_URI)
+    mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
     mlflow.set_experiment(EXPERIMENT_NAME)
 
     # Get our experiment info
