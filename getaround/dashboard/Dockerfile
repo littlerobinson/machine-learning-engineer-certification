@@ -8,6 +8,4 @@ COPY . /app
 
 RUN pip install -r requirements.txt
 
-HEALTHCHECK CMD curl --fail http://localhost:$PORT/_stcore/health
-
 CMD streamlit run src/streamlit_app.py --server.port $PORT --server.address=0.0.0.0

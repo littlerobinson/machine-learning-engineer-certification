@@ -3,8 +3,12 @@ services:
     environment:
       - PORT=8881
     build: ./api
+    volumes:
+      - ./api/src:/app/src
     ports:
       - "8881:8881"
+    networks:
+      - getaroundnetwork
   dashboard:
     environment:
       - PORT=8882
@@ -13,9 +17,16 @@ services:
       - ./dashboard/src:/app/src
     ports:
       - "8882:8882"
+    networks:
+      - getaroundnetwork
   mlflow:
     environment:
       - PORT=8883
     build: ./mlflow
     ports:
       - "8883:8883"
+    networks:
+      - getaroundnetwork
+networks:
+  getaroundnetwork:
+    driver: bridge

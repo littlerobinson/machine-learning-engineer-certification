@@ -4,6 +4,7 @@ gunicorn
 pydantic
 pandas
 numpy
-openpyxl
 mlflow
-boto3
+scikit-learn
+xgboost
+# boto3
