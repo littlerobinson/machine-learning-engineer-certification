@@ -1,0 +1,15 @@
+name: getaround-price-prediction
+docker_env:
+  image: getaround-mlflow-jedha
+  volumes: ["./:/mlflow"]
+  environment: [
+    "MLFLOW_TRACKING_URI",
+    "BACKEND_STORE_URI",
+    "AWS_ACCESS_KEY_ID",
+    "AWS_SECRET_ACCESS_KEY",
+    "AWS_ARTIFACT_S3_URI",
+    "MLFLOW_EXPERIMENT_NAME"
+  ]
+entry_points:
+  main:
+    command: "python app.py"

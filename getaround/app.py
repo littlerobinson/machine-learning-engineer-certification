@@ -39,7 +39,7 @@ if __name__ == "__main__":
     # Init for MLflow
     MLFLOW_TRACKING_URI = os.getenv("MLFLOW_TRACKING_URI")
     print(f"Call MLflow URI: {MLFLOW_TRACKING_URI}")
-    EXPERIMENT_NAME = "getaround-price-prediction"
+    EXPERIMENT_NAME = "jedha-getaround-price-prediction"
 
     mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
     mlflow.set_experiment(EXPERIMENT_NAME)

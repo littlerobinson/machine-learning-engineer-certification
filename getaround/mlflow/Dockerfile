@@ -1,4 +1,4 @@
-FROM python:3.12.7-slim-bookworm AS getaround-mlflow-jedha
+FROM python:3.12.7-slim-bookworm
 
 # ENV variables
 ENV AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID

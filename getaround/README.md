@@ -100,7 +100,7 @@ curl -X POST "https://getaround-api-jedha.luciole.dev/getaround/predict" -H "Con
 - `api/` : Contient le code de l'API et le Dockerfile.
 - `dashboard/` : Contient le code du tableau de bord et le Dockerfile.
 - `mlflow/` : Dockerfile pour MLFlow.
-- `training/` : Contient le script d'entrainement.
+- `app.py` : Contient le script d'entrainement.
 
 ## 6. 📊 Dashboard
 

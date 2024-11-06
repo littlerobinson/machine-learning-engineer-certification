@@ -1,5 +1,6 @@
 services:
   api:
+    container_name: getaround-api-jedha
     environment:
       - PORT=8881
     image: getaround-api-jedha
@@ -11,6 +12,7 @@ services:
     networks:
       - getaroundnetwork
   dashboard:
+    container_name: getaround-dashboard-jedha
     environment:
       - PORT=8882
     image: getaround-dashboard-jedha
@@ -22,6 +24,7 @@ services:
     networks:
       - getaroundnetwork
   mlflow:
+    container_name: getaround-mlflow-jedha
     environment:
       - PORT=8883
     image: getaround-mlflow-jedha
