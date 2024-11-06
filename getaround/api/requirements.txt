@@ -2,6 +2,7 @@ fastapi[standard]
 uvicorn[standard]
 gunicorn
 pydantic
+boto3
 pandas
 numpy
 mlflow
