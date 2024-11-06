@@ -2,21 +2,25 @@
 
 ## 1. 📝 Description
 
-Ce projet est une API de prédiction de prix pour les voitures, utilisant un modèle de machine learning déployé avec MLflow. L'API permet de prédire le prix d'une voiture en fonction de diverses caractéristiques telles que le kilométrage, la puissance du moteur, les équipements, etc.
+Ce projet à 2 Objectifs :
+
+- Un dashboard permettant de donner des pistes d'amélioration pour contrer les nombreux retards que subissent les loueurs de voitures.
+- La prédiction de prix pour les voitures via une API utilisant un modèle de machine learning déployé avec MLflow. L'API permet de prédire le prix d'une voiture en fonction de diverses caractéristiques telles que le kilométrage, la puissance du moteur, les équipements, etc.
 
 ## 2. 🌍 Contexte
 
 Getaround est le "Airbnb des voitures". Vous pouvez louer des voitures à n'importe qui pour quelques heures ou quelques jours ! 🚙 Fondée en 2009, cette entreprise a connu une croissance rapide et, en 2019, compte plus de 5 millions d'utilisateurs et environ 20 000 voitures disponibles dans le monde.
 
-En tant que partenaire de Jedha, ils ont proposé de grands défis. Pour cette étude de cas, nous vous invitons à vous mettre à notre place et à réaliser une analyse effectuée en 2017 🔮.
-
 Sur Getaround, les conducteurs réservent des voitures pour une durée déterminée, allant d'une heure à plusieurs jours. Ils sont censés rendre la voiture à temps, mais des retards de restitution peuvent créer de fortes frictions pour le client suivant 🚦.
 
 ### Objectifs 🎯
 
-Pour limiter ces problèmes, nous avons décidé de mettre en place un délai minimum entre deux locations. Une voiture ne sera pas affichée si l'horaire de la nouvelle réservation est trop proche d'une location existante.
+Ce projet à 2 Objectifs :
 
-Cela résout le problème des retards, mais peut aussi réduire les revenus de Getaround et des propriétaires : nous devons donc trouver le bon compromis ⚖️.
+- La prédiction de prix pour les voitures via une API utilisant un modèle de machine learning déployé avec MLflow. L'API permet de prédire le prix d'une voiture en fonction de diverses caractéristiques telles que le kilométrage, la puissance du moteur, les équipements, etc.
+- Un dashboard permettant de donner des pistes d'amélioration pour contrer les nombreux retards que subissent les loueurs de voitures.
+  Pour limiter ces problèmes, nous avons décidé de mettre en place un délai minimum entre deux locations. Une voiture ne sera pas affichée si l'horaire de la nouvelle réservation est trop proche d'une location existante.
+  Cela résout le problème des retards, mais peut aussi réduire les revenus de Getaround et des propriétaires : nous devons donc trouver le bon compromis ⚖️.
 
 ## 3. 🔧 Prérequis
 
@@ -57,7 +61,7 @@ Une API est disponible pour demander une prédiction du tarif journalier d'une v
 
 Accès à l'API : [https://getaround-api-jedha.luciole.dev](https://getaround-api-jedha.luciole.dev)
 
-Et à la documentation de l'API : [https://getaround-api-jedha.luciole.dev/docs](https://getaround-api-jedha.luciole.dev/docs)
+Documentation de l'API : [https://getaround-api-jedha.luciole.dev/docs](https://getaround-api-jedha.luciole.dev/docs)
 
 ### Endpoint de prédiction
 
@@ -66,7 +70,7 @@ L'API expose un endpoint `/predict` pour effectuer des prédictions de prix.
 #### Exemple de requête
 
 ```sh
-curl -X POST "http://localhost:8881/predict" -H "Content-Type: application/json" -d '{
+curl -X POST "https://getaround-api-jedha.luciole.dev/getaround/predict" -H "Content-Type: application/json" -d '{
   "mileage": 10000,
   "engine_power": 120,
   "private_parking_available": true,
@@ -96,6 +100,7 @@ curl -X POST "http://localhost:8881/predict" -H "Content-Type: application/json"
 - `api/` : Contient le code de l'API et le Dockerfile.
 - `dashboard/` : Contient le code du tableau de bord et le Dockerfile.
 - `mlflow/` : Dockerfile pour MLFlow.
+- `training/` : Contient le script d'entrainement.
 
 ## 6. 📊 Dashboard
 
