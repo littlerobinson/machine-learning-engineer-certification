@@ -13,7 +13,7 @@ load_dotenv()
 
 from src.api import geo_city_api
 from src.api import weather_map_api
-from src.scrapping import booking_spyder
+from src.scraping import booking_spyder
 from src.infrastructure import datalake_s3
 from src.infrastructure import datawarehouse_rds
 from src.db import forecast_processor, accomodation_processor
@@ -115,7 +115,7 @@ if __name__ == "__main__":
 
     # # ======================================================================
     # # Get list of city where geo_city_api find results
-    # # id for relationnal table and name to search when scrapping
+    # # id for relationnal table and name to search when scraping
     # # ======================================================================
 
     # existing_cities_name = cleaned_city_df[["name", "id"]]
@@ -138,7 +138,7 @@ if __name__ == "__main__":
     # wm_api.create_output_result(weather_df, "data/weather_infos.csv")
 
     # # ======================================================================
-    # # Scrapping
+    # # Scraping
     # # ======================================================================
 
     # # Delete file name if existing

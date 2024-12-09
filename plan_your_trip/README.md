@@ -2,11 +2,11 @@ Voici un exemple de fichier `README.md` pour votre projet :
 
 ---
 
-# Projet de Scrapping et de Prévisions Météo
+# Projet de Scraping et de Prévisions Météo
 
 ## Description
 
-Ce projet a pour objectif de récupérer des informations géographiques, des prévisions météorologiques et des données hôtelières pour une liste de villes en France. Les données sont collectées à l'aide de différentes API et de techniques de scrapping web, puis stockées dans un DataLake sur AWS S3 et enfin mise au propre dans un DataWarehouse.
+Ce projet a pour objectif de récupérer des informations géographiques, des prévisions météorologiques et des données hôtelières pour une liste de villes en France. Les données sont collectées à l'aide de différentes API et de techniques de scraping web, puis stockées dans un DataLake sur AWS S3 et enfin mise au propre dans un DataWarehouse.
 En sortie 2 cartes sont présentées avec le Top des destinations en fonction de la météo et le Top des hôtels dans la région.
 
 ## Installation
@@ -22,47 +22,47 @@ En sortie 2 cartes sont présentées avec le Top des destinations en fonction de
 
 1. Clonez le dépôt :
 
-    ```bash
-    git clone git@github.com:littlerobinson/jedha_plan_your_trip.git
-    cd jedha_plan_your_trip
-    ```
+   ```bash
+   git clone git@github.com:littlerobinson/jedha_plan_your_trip.git
+   cd jedha_plan_your_trip
+   ```
 
 2. Créez et activez un environnement virtuel :
 
-    ```bash
-    python -m venv env
-    source env/bin/activate  # Sur Windows, utilisez `env\Scripts\activate`
-    ```
+   ```bash
+   python -m venv env
+   source env/bin/activate  # Sur Windows, utilisez `env\Scripts\activate`
+   ```
 
 3. Installez les dépendances :
 
-    ```bash
-    pip install -r requirements.txt
-    ```
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 4. Configurez les variables d'environnement en créant un fichier `.env` à la racine du projet avec les clés et configurations nécessaires :
 
-    ```plaintext
-    # Logging
-    LOG_LEVEL=
+   ```plaintext
+   # Logging
+   LOG_LEVEL=
 
-    # AWS
-    AWS_ACCESS_KEY_ID=
-    AWS_SECRET_ACCESS_KEY=
+   # AWS
+   AWS_ACCESS_KEY_ID=
+   AWS_SECRET_ACCESS_KEY=
 
-    # DATABASES
-    DB_USERNAME=
-    DB_PASSWORD=
-    DB_HOSTNAME=
-    DB_NAME=
-    DB_PORT=
+   # DATABASES
+   DB_USERNAME=
+   DB_PASSWORD=
+   DB_HOSTNAME=
+   DB_NAME=
+   DB_PORT=
 
-    # API
-    OPENWEATHERMAP_API=
+   # API
+   OPENWEATHERMAP_API=
 
-    # Scrapping
-    OUTPUT_PATH_BOOKING='output/booking_results.json'
-    ```
+   # Scraping
+   OUTPUT_PATH_BOOKING='output/booking_results.json'
+   ```
 
 ## Utilisation
 
@@ -78,7 +78,7 @@ Le script effectuera les opérations suivantes :
 
 1. Récupération des informations géographiques des villes via l'API Nominatim.
 2. Récupération des prévisions météorologiques des 8 prochains jours via l'API OpenWeatherMap.
-3. Scrapping des données hôtelières sur le site booking.com à l'aide de Scrapy.
+3. Scraping des données hôtelières sur le site booking.com à l'aide de Scrapy.
 4. Chargement des données sur un bucket S3 sur AWS.
 5. Nettoyage des données dans une base de donneées AWS RDS.
 6. Génération de fichier html avec les cartes des 5 villes où il faut aller en fonction des prévisions météo et des hôtels associés ces villes.
@@ -91,7 +91,7 @@ Le script utilise Scrapy pour scrapper les données hôtelières. Les paramètre
 
 - Les informations géographiques des villes sont stockées dans `output/city_geo_infos.csv`.
 - Les informations géographiques des villes sont stockées dans `output/weather_infos.csv`.
-- Les données de scrapping des hôtels sont stockées dans `output/booking_data.json`.
+- Les données de scraping des hôtels sont stockées dans `output/booking_data.json`.
 - Les fichiers de cache de Scrapy sont stockés dans le répertoire `scrappy/httpcache`.
 - Utilisation du cache http pour limiter les appels aux APIs
 
@@ -102,7 +102,7 @@ Le script se connecte à AWS S3 et charge les fichiers générés dans un bucket
 ## Structure du Projet
 
 ```
-.
+./
 ├── data
 │   ├── booking_results.json
 │   ├── city_geo_infos.csv
@@ -123,6 +123,7 @@ Le script se connecte à AWS S3 et charge les fichiers générés dans un bucket
 │   ├── accomodation.html
 │   └── forecast.html
 ├── README.md
+├── requirements_conda.txt
 ├── requirements.txt
 ├── src
 │   ├── api
@@ -134,13 +135,12 @@ Le script se connecte à AWS S3 et charge les fichiers générés dans un bucket
 │   ├── infrastructure
 │   │   ├── datalake_s3.py
 │   │   ├── datawarehouse_rds.py
-│   ├── scrapping
+│   ├── scraping
 │   │   ├── booking_spyder.py
 │   └── utils
 │       ├── database_connection.py
-|
-└── geo_city_api_cache.sqlite
 └── weather_map_api_cache.sqlite
+└── geo_city_api_cache.sqlite
 ```
 
 ## Contribuer
