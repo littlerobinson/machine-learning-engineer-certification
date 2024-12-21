@@ -102,6 +102,54 @@ curl -X POST "https://getaround-api-jedha.luciole.dev/getaround/predict" -H "Con
 - `mlflow/` : Dockerfile pour MLFlow.
 - `app.py` : Contient le script d'entrainement.
 
+```bash
+.
+├── api
+│   └── src
+│       ├── data
+│       ├── handlers
+│       ├── models
+│       └── routers
+├── dashboard
+│   └── src
+│       ├── data
+│       ├── functions
+├── data
+├── mlflow
+├── mlruns
+│   ├── 0
+│   ├── 296131423263316523
+│   │   ├── 00c7d105ff3f4cb8a1cc140de751b5af
+│   │   │   ├── artifacts
+│   │   │   │   └── getaround-price-prediction
+│   │   │   ├── metrics
+│   │   │   ├── params
+│   │   │   └── tags
+│   └── models
+│       ├── Gradient Boosting
+│       │   └── version-1
+│       ├── Lasso
+│       │   └── version-1
+│       ├── Linear Regression
+│       │   ├── version-1
+│       │   ├── version-2
+│       │   └── version-3
+│       ├── Random Forest
+│       │   └── version-1
+│       ├── Ridge
+│       │   ├── version-1
+│       │   └── version-2
+│       └── XGBoost
+│           └── version-1
+└── notebooks
+└── app.py
+└── docker-compose.yml
+└── MLproject
+└── README.md
+└── run.sh
+└── secrets.sh
+```
+
 ## 6. 📊 Dashboard
 
 Un tableau de bord est accessible ici : [https://getaround-dashboard-jedha.luciole.dev](https://getaround-dashboard-jedha.luciole.dev)
