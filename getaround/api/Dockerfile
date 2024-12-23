@@ -6,7 +6,7 @@ ENV PIP_ROOT_USER_ACTION=ignore
 
 WORKDIR /app
 
-RUN apt-get update & apt-get clean
+RUN apt-get update && apt-get clean
 
 COPY requirements.txt /dependencies/requirements.txt
 RUN pip install --no-cache-dir --upgrade -r /dependencies/requirements.txt

@@ -2,7 +2,7 @@ FROM python:3.12.7-slim-bookworm AS getaround-dashboard-jedha
 
 WORKDIR /app
 
-RUN apt-get update && apt-get install -y curl & apt-get clean
+RUN apt-get update && apt-get install -y curl && apt-get clean
 
 COPY . /app
 

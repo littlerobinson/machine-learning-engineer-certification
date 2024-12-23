@@ -42,6 +42,12 @@ Ce projet à 2 Objectifs :
    docker-compose up --build
    ```
 
+3. Ajoutez les variables d'environnements :
+
+   ```sh
+   source secrets.sh
+   ```
+
 ## 🧑‍🏫 Entraînement
 
 Ce script lance des entraînements et génère des modèles historisés sur MLFlow.
@@ -49,7 +55,6 @@ Ce script lance des entraînements et génère des modèles historisés sur MLFl
 Lancer un jeu d'entraînement :
 
 ```bash
-cd training
 python app.py
 ```
 
