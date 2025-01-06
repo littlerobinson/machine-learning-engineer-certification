@@ -6,6 +6,6 @@ docker run -it -p 8080:8080\
  -e MLFLOW_TRACKING_URI="https://xxx"\
  -e AWS_ACCESS_KEY_ID="xxx"\
  -e AWS_SECRET_ACCESS_KEY="xxx"\
- -e AWS_ARTIFACT_S3_URI="s3://xxx"\
+ -e MLFLOW_LOGGED_MODEL="s3://xxx"\
  -e BACKEND_STORE_URI="postgresql://xxx"\
  getaround-mlflow-jedha python app.py

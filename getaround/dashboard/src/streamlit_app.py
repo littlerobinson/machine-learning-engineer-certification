@@ -431,7 +431,7 @@ MEDIAN_DAY_PRICE = 119
 MEDIAN_MINUTE_PRICE = 1.98
 THRESHOLD_MINUTE_MAX = 400
 MENU_EDA = "Exploration des données"
-MENU_RESEARCH = "KPI"
+MENU_RESEARCH = "Recherches"
 MENU_BASICS_STATS = "Data"
 MENU_OBSERVATIONS = "Observations"
 
@@ -526,7 +526,7 @@ if __name__ == "__main__":
         st.markdown("---")
 
     if tab == MENU_RESEARCH:
-        st.title("🏗️ KPI")
+        st.title("🔍️ Recherches")
 
         st.markdown("---")
 
@@ -764,7 +764,7 @@ if __name__ == "__main__":
 
             **- Mise en place d'un délai minimum :**
 
-            - Implémenter un délai minimum pour limiter les retards et les pertes financières. D'après la figure "Impact du seuil de retard sur la perte totale", un délai situé entre **300 et 400 minutes** pourrait être optimal.
+            - Implémenter un délai minimum pour limiter les retards et les pertes financières. D'après la figure "Impact du seuil de retard sur la perte totale", un délai situé entre **30 et 180 minutes** pourrait être optimal.
 
             **- Remplacement automatique des véhicules :**
 

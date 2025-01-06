@@ -3,7 +3,7 @@ FROM python:3.12.7-slim-bookworm
 # ENV variables
 ENV AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
 ENV AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
-ENV AWS_ARTIFACT_S3_URI=$AWS_ARTIFACT_S3_URI
+ENV MLFLOW_LOGGED_MODEL=$MLFLOW_LOGGED_MODEL
 ENV BACKEND_STORE_URI=$BACKEND_STORE_URI
 ENV PIP_ROOT_USER_ACTION=ignore
 
@@ -28,4 +28,4 @@ RUN rm -rf ./aws
 CMD mlflow server --port $PORT \
     --host 0.0.0.0 \
     --backend-store-uri $BACKEND_STORE_URI \
-    --default-artifact-root $AWS_ARTIFACT_S3_URI
+    --default-artifact-root $MLFLOW_LOGGED_MODEL

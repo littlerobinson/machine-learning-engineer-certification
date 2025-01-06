@@ -55,7 +55,7 @@ Ce script lance des entraînements et génère des modèles historisés sur MLFl
 Lancer un jeu d'entraînement :
 
 ```bash
-python app.py
+./run.sh
 ```
 
 Vous pouvez visualiser l'historique des entraînements ici : [https://getaround-mlflow-jedha.luciole.dev](https://getaround-mlflow-jedha.luciole.dev)
