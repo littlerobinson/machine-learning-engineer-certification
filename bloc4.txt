@@ -1,2 +1,0 @@
-BLOC4 - PROJET AT&T
-https://github.com/littlerobinson/ai-architect-certification/tree/main/spam_detector

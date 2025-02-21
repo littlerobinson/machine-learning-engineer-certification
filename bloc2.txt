@@ -1,5 +1,0 @@
-BLOC2 - PROJET TINDER
-https://github.com/littlerobinson/ai-architect-certification/tree/main/eda_speed_dating
-
-BLOC2 - PROJET STEAM
-https://github.com/littlerobinson/ai-architect-certification/tree/main/steam_project

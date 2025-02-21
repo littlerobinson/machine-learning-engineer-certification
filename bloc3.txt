@@ -1,8 +1,0 @@
-BLOC3 - PROJET WALMART SALES
-https://github.com/littlerobinson/ai-architect-certification/tree/main/ml_walmart_sales
-
-BLOC 3 - PROJET CONVERSION RATE CHALLENGE
-https://github.com/littlerobinson/ai-architect-certification/tree/main/ml_datascienceweekly
-
-BLOC3 - PROJET UBER PICKUPS
-https://github.com/littlerobinson/ai-architect-certification/tree/main/uber_pickups
